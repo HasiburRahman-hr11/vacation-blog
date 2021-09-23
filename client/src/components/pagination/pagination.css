@@ -36,12 +36,12 @@
 }
 
 /* Admin */
-.admin_posts .pagination .page_list_item.current_page .page_link,
-.admin_posts .pagination .page_list_item .page_link:hover{
+.admin .pagination .page_list_item.current_page .page_link,
+.admin .pagination .page_list_item .page_link:hover{
     background-color: #666;
     color: #fff;
 }
 
-.admin_posts .pagination .page_link{
+.admin .pagination .page_link{
     border: 1px solid #666;
 }

@@ -3,7 +3,6 @@
     overflow-y: auto;
     padding-left: 80px;
     scrollbar-width: none; 
-    padding-bottom: 20px;
 }
 
 .admin_posts::-webkit-scrollbar{

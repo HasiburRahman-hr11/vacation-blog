@@ -21,7 +21,7 @@ const AdminPosts = ({ reRender }) => {
     const [totalPages, setTotalPages] = useState(1);
     const [limit, setLimit] = useState(12);
 
-    const sortAlphabetically  = (a, b) => {
+    const sortAlphabetically = (a, b) => {
         let textA = a.title.toUpperCase();
         let textB = b.title.toUpperCase();
         return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
@@ -61,16 +61,19 @@ const AdminPosts = ({ reRender }) => {
                     {loading ? (
                         <Loading />
                     ) : (
-                        <div className="admin_posts">
-                            <ul className="admin_posts_wrapper">
-                                {posts.map(post => (
-                                    <Post key={post._id} post={post} reRender={reRender} />
-                                ))}
-                            </ul>
+                        <>
+                            <div className="admin_posts">
+                                <ul className="admin_posts_wrapper">
+                                    {posts.map(post => (
+                                        <Post key={post._id} post={post} reRender={reRender} />
+                                    ))}
+                                </ul>
 
+
+
+                            </div>
                             {totalPages && totalPages > 1 && <Pagination total={totalPages} page={currentPage} changePage={setCurrentPage} />}
-
-                        </div>
+                        </>
                     )}
                 </div>
             )}
