@@ -1,11 +1,9 @@
 import { Helmet } from 'react-helmet';
 import ContactForm from '../../components/contactForm/ContactForm';
 import './contact.css';
-import { useContext } from 'react';
-import { AuthContext } from '../../context/authContext';
+
 
 const Contact = () => {
-    const { user } = useContext(AuthContext);
     return (
         <>
             <Helmet>
@@ -38,18 +36,12 @@ const Contact = () => {
                                     <p className="contact_info_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
 
                                     <div className="contact_info_links">
-                                        {user?.phone && (
-                                            <p className="contact_link_item">
-                                                Phone: <span>{user?.phone}</span>
+                                    <p className="contact_link_item">
+                                                Phone: <span>+880 1303 606467</span>
                                             </p>
-                                        )}
-                                        {user?.email && (
                                             <p className="contact_link_item">
-                                                Email: <a href="mailto:exmple@gmail.com" >{user?.email}</a>
+                                                Email: <a href="mailto:mailtohrhasib@gmail.com" >mailtohrhasib@gmail.com</a>
                                             </p>
-                                        )}
-
-
                                     </div>
                                 </div>
                             </div>
