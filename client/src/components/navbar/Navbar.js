@@ -50,23 +50,41 @@ const Navbar = ({ loggedIn, admin }) => {
                                 <nav className={isMobile ? 'mobile_nav main_nav' : 'main_nav'}>
                                     <Close className="menu_close" onClick={() => setIsMobile(false)} />
                                     <ul className="main_menu">
-                                        <li className="menu_item">
-                                            <NavLink to="/blog" activeClassName='is-active'>Blog</NavLink>
+                                        <li className="menu_item" onClick={() => setIsMobile(false)}>
+                                            <NavLink 
+                                            to="/blog" 
+                                            activeClassName='is-active'
+                                            >Blog</NavLink>
                                         </li>
-                                        <li className="menu_item">
-                                            <NavLink to="/about" activeClassName='is-active'>About</NavLink>
+                                        <li className="menu_item" onClick={() => setIsMobile(false)}>
+                                            <NavLink 
+                                            to="/about" 
+                                            activeClassName='is-active'
+                                            
+                                            >About</NavLink>
                                         </li>
-                                        <li className="menu_item">
-                                            <NavLink to="/contact" activeClassName='is-active'>Contact</NavLink>
+                                        <li className="menu_item" onClick={() => setIsMobile(false)}>
+                                            <NavLink 
+                                            to="/contact" 
+                                            activeClassName='is-active'
+                                            
+                                            >Contact</NavLink>
                                         </li>
 
                                         {!loggedIn ? (
-                                            <li className="menu_item">
-                                                <NavLink to="/login" activeClassName='is-active'>Login</NavLink>
+                                            <li className="menu_item" onClick={() => setIsMobile(false)}>
+                                                <NavLink 
+                                                to="/login" 
+                                                activeClassName='is-active'
+                                                >Login</NavLink>
                                             </li>
                                         ) : (
-                                            <li className="menu_item">
-                                                <NavLink to="/admin/dashboard" activeClassName='is-active'>Dashboard</NavLink>
+                                            <li className="menu_item" onClick={() => setIsMobile(false)}>
+                                                <NavLink 
+                                                to="/admin/dashboard" 
+                                                activeClassName='is-active'
+                                                
+                                                >Dashboard</NavLink>
                                             </li>
                                         )}
                                     </ul>
