@@ -1,0 +1,31 @@
+
+.contact_form{
+    width: 100%;
+    padding-top: 10px;
+}
+.input_wrapper{
+    margin-bottom: 15px;
+}
+.contact_input{
+    width: 100%;
+    height: 50px;
+    border: 1px solid #ccc;
+    outline: 0;
+    border-radius: 25px;
+    padding-left: 20px;
+    background-color: #fcfcfc;
+}
+
+textarea.contact_input{
+    padding-top: 10px;
+    min-height: 200px;
+    border-radius: 8px;
+}
+
+.contact_input:focus{
+    border-color: #888;
+}
+
+.contact_form_wrapper p.success{
+    color: #C44536;
+}

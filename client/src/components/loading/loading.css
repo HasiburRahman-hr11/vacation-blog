@@ -1,0 +1,10 @@
+.loading{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #EDE5D4;
+    border-bottom: 1px solid #ccc;
+    z-index: 90;
+}

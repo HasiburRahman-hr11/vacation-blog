@@ -1,0 +1,47 @@
+.pagination{
+    margin-top: 50px;
+}
+.pagination .page_list{
+    margin-bottom: 0;
+    padding-left: 0;
+}
+.pagination .page_list_item{
+    margin: 0 5px;
+    cursor: pointer;
+}
+.pagination .page_list_item.disabled{
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.pagination .page_link{
+    color: #333;
+    font-weight: bold;
+    padding: 5px 9px;
+    transition: all 0.3s ease;
+    border: 1px solid #EDE5D4;
+    border-radius: 5px;
+}
+.pagination .page_link.prev_page,
+.pagination .page_link.next_page{
+    padding: 5px 5px;
+}
+
+.pagination .page_list_item.current_page .page_link , 
+.pagination .page_list_item .page_link:hover{
+    background-color: #EDE5D4;
+}
+.pagination .page_list_item.disabled{
+    opacity: 0.5;
+}
+
+/* Admin */
+.admin_posts .pagination .page_list_item.current_page .page_link,
+.admin_posts .pagination .page_list_item .page_link:hover{
+    background-color: #666;
+    color: #fff;
+}
+
+.admin_posts .pagination .page_link{
+    border: 1px solid #666;
+}

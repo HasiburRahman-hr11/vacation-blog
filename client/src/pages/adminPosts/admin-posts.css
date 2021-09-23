@@ -1,0 +1,22 @@
+.admin_posts{
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+    padding-left: 80px;
+    scrollbar-width: none; 
+    padding-bottom: 20px;
+}
+
+.admin_posts::-webkit-scrollbar{
+    display: none;
+}
+
+.admin_posts_wrapper{
+    margin: 0;
+    padding: 0;
+    padding-right: 15px;
+}
+@media only screen and (max-width:575px){
+    .admin_posts {
+        padding-left: 70px;
+    }
+}

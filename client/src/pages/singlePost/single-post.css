@@ -1,0 +1,21 @@
+
+.single_hero_content{
+    max-width: 700px;
+    margin: 0 auto;
+}
+.single_hero_image img{
+    border-radius: 30px;
+    max-height: 600px;
+    object-fit: cover;
+}
+.single_post_meta .tag{
+    background-color: #fff;
+    border-color: #ccc;
+}
+.single_post_meta .tag:hover{
+    color: inherit;
+}
+.content_wrapper{
+    max-width: 864px;
+    margin: 0 auto;
+}

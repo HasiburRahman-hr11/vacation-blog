@@ -1,0 +1,53 @@
+.create_post_content{
+    max-width: 500px;
+    margin: 0 auto;
+}
+.create_post_form .post_input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    border-bottom: 2px solid #39312D;
+    padding: 10px;
+    background: #E6DCC9;
+    border-radius: 5px 5px 0 0;
+}
+.create_post_form textarea.post_input{
+    min-height: 150px;
+}
+.file_label{
+    background-color: #E6DCC9;
+    padding: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.create_post_form .button{
+    background-color: #39312D;
+    color: #fff;
+    min-width: 50%;
+}
+.create_post_form .button:disabled{
+    background-color: #726d6a;
+    cursor: not-allowed;
+}
+
+@media only screen and (max-width:767px){
+    .create_post_content {
+        max-width: 450px;
+    }
+}
+
+
+@media only screen and (max-width:575px){
+    .create_post_content {
+        max-width: 400px;
+        margin-left: 65px;
+        margin-right: 5px;
+    }
+}
+
+@media only screen and (max-width:300px){
+    .create_post_form textarea.post_input {
+        min-height: 110px;
+    }
+}

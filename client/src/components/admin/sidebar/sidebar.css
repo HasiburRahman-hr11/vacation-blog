@@ -1,0 +1,107 @@
+.admin_sidebar{
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #c9ba99;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: 0.3s ease;
+    z-index: 99;
+    
+}
+.admin_sidebar.active{
+    width: 220px;
+    left: 0;
+}
+.sidebar_wrapper{
+    position: relative;
+}
+.admin_sidebar_toggler{
+    background-color: #e6dcc9;
+    padding: 8px 10px;
+    padding-right: 0;
+    position: absolute;
+    top: 0;
+    left: 60px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-left:0;
+    border-top:0;
+    transition: all 0.3s ease;
+    z-index: 99;
+}
+.admin_sidebar_toggler.rotate{
+    padding-right: 10px;
+    left: 220px;
+    padding-left: 0;
+}
+.admin_sidebar_toggler.rotate .sidebar_toggle_icon{
+    transform: rotate(180deg);
+    transition: all 0.3s ease;
+}
+.sidebar_admin_title{
+    margin-bottom: 0;
+    font-size: 25px;
+    font-family: Fraunces, sans-serif;
+    padding: 20px 20px;
+    padding-left: 0;
+    background-color: #c9ba99;
+    white-space: nowrap;
+}
+.sidebar_admin_title span{
+    opacity: 0;
+}
+.admin_sidebar.active .sidebar_admin_title span{
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+.admin_sidebar .admin_pic{
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.sidebar_nav{
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar_nav_item{
+    font-weight: 500;
+    border-top: 1px solid #EDE5D4;
+    transition: all 0.3s ease;
+}
+.sidebar_nav_item:last-child{
+    border-bottom: 1px solid #EDE5D4;
+}
+
+.sidebar_nav_icon{
+    margin-right: 15px;
+}
+.sidebar_nav_item a{
+    padding: 10px 20px;
+    padding-left: 15px;
+    color: inherit;
+    display: block;
+    width: 100%; 
+}
+.sidebar_nav_item a:hover{
+    background-color: #EDE5D4;
+}
+.sidebar_nav_item a.is-active{
+    color: #C44536;
+    background-color: #EDE5D4;
+}
+.sidebar_nav_item span{
+    transform: scale(0);
+    white-space: nowrap;
+    opacity: 0;
+    transition:transform 0.4s ease;
+}
+.admin_sidebar.active .sidebar_nav_item span{
+    transform: scale(1);
+    opacity: 1;
+}

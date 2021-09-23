@@ -1,0 +1,41 @@
+.about_hero_img{
+    border-radius: 30px;
+}
+
+.about_info{
+    padding: 100px 0;
+}
+
+.about_info_wrapper{
+    max-width: 864px;
+    margin: 0 auto;
+}
+
+.about_info_title{
+    margin-bottom: 20px;
+}
+
+.about_big_img{
+    border-radius: 35px;
+}
+.about_wrapper .recent_posts_section {
+    padding-top: 0;
+}
+
+@media only screen and (max-width:767px){
+    .about_wrapper .hero_bg {
+        height: 75%;;
+    }
+    .contact_wrapper .hero_bg {
+        height: 50%;;
+    }
+}
+
+@media only screen and (max-width:575px){
+    .about_info {
+        padding: 70px 0;
+    }
+    .about_big_img , .about_hero_img {
+        border-radius: 10px;
+    }
+}

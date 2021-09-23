@@ -1,0 +1,44 @@
+.auth {
+    padding: 100px 0;
+    background-color: #EDE5D4;
+}
+
+.auth_content {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 50px 30px;
+    border-radius: 8px;
+    background-color: #E6DCC9;
+    border: 1px solid #e2d5be;
+}
+
+.auth_input {
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    outline: 0;
+}
+
+.auth_input:focus {
+    border-color: #666;
+}
+
+.auth_content .button {
+    min-width: 50%;
+    margin: auto;
+}
+
+.auth_title {
+    font-family: Fraunces, sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+}
+.auth_content .button{
+    height: 50px;
+    font-size: 16px;
+}
+.login_failed{
+    font-size: 14px;
+}
