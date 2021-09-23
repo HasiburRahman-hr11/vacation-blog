@@ -36,12 +36,12 @@ const Contact = () => {
                                     <p className="contact_info_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
 
                                     <div className="contact_info_links">
-                                    <p className="contact_link_item">
-                                                Phone: <span>+880 1303 606467</span>
-                                            </p>
-                                            <p className="contact_link_item">
-                                                Email: <a href="mailto:mailtohrhasib@gmail.com" >mailtohrhasib@gmail.com</a>
-                                            </p>
+                                        <p className="contact_link_item">
+                                            Phone: <span>+880 1303 606467</span>
+                                        </p>
+                                        <p className="contact_link_item">
+                                            Email: <a href="mailto:mailtohrhasib@gmail.com" >mailtohrhasib@gmail.com</a>
+                                        </p>
                                     </div>
                                 </div>
                             </div>

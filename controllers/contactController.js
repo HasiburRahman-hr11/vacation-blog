@@ -26,7 +26,7 @@ exports.contactController = (req, res) => {
             } else {
                 res.send({
                     success: true,
-                    message: 'Thanks for contacting us. We will get back to you shortly.'
+                    message: 'Thanks for contacting me. I will get back to you shortly.'
                 });
             }
         });
