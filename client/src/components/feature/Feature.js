@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import './feature.css';
 import Fade from 'react-reveal/Fade';
+import ReactHtmlParser from 'react-html-parser'
 
 const Feature = ({ post }) => {
 
@@ -13,9 +14,9 @@ const Feature = ({ post }) => {
                             <div className="feature_content">
                                 <div className="feature_tagline">Featured Post</div>
                                 <Fade top>
-                                    <h1 className="feature_title big_title">{post?.title}</h1>
+                                    <h1 className="feature_title big_title elipsis">{post?.title}</h1>
                                 </Fade>
-                                <p className="featured_desc">{post?.description?.substr(0, 200)}</p>
+                                <div className="featured_desc elipsis">{ReactHtmlParser(post?.description?.substr(0, 200))}</div>
 
                                 <Link to={`/post/${post?._id}`} className="button primary_btn link_btn">Read More</Link>
                             </div>

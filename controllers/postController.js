@@ -110,6 +110,7 @@ exports.getAllPostsController = async (req, res) => {
     let itemPerPage = Number.parseInt(req.query.limit , 10) || 12 ;
     try {
         const posts = await Post.find()
+        .sort( { createdAt : -1} )
         .skip((itemPerPage*currentPage) - itemPerPage)
         .limit(itemPerPage)
 

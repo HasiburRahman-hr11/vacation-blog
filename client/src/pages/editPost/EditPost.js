@@ -1,13 +1,15 @@
+/* eslint-disable no-multi-str */
 import { Helmet } from 'react-helmet';
 import '../createPost/create-post.css';
 import Sidebar from '../../components/admin/sidebar/Sidebar';
 import { Image } from '@material-ui/icons';
 import { useHistory } from 'react-router';
-import { useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
 import Loading from '../../components/loading/Loading';
 import { CircularProgress } from '@material-ui/core';
+import { Editor } from '@tinymce/tinymce-react';
 
 
 
@@ -19,7 +21,7 @@ const EditPost = () => {
     const [description, setDescription] = useState('');
     const [categories, setCategories] = useState('');
     const [thumbnail, setThumbnail] = useState('');
-    const [loadingEdit , setLoadingEdit] = useState(false)
+    const [loadingEdit, setLoadingEdit] = useState(false)
 
     const params = useParams();
     const history = useHistory();
@@ -49,7 +51,7 @@ const EditPost = () => {
 
         setLoadingEdit(true);
         try {
-            await axios.put(`/api/posts/update/${post._id}` , formData , { headers: { 'Content-Type': 'multipart/form-data' } });
+            await axios.put(`/api/posts/update/${post._id}`, formData, { headers: { 'Content-Type': 'multipart/form-data' } });
             setLoadingEdit(false)
         } catch (error) {
             console.log(error);
@@ -94,13 +96,75 @@ const EditPost = () => {
                                             />
                                         </div>
                                         <div className="mb-3">
-                                            <textarea
+                                            {/* <textarea
                                                 name="desc"
                                                 className="post_input"
                                                 placeholder="Post Description"
                                                 value={description}
                                                 onChange={(e) => setDescription(e.target.value)}
-                                            ></textarea>
+                                            ></textarea> */}
+                                            <Editor
+                                                name="description"
+                                                className="post_input"
+                                                placeholder="Post Description"
+                                                required
+                                                value={description}
+                                                onEditorChange={(content) => setDescription(content)}
+                                                init={{
+                                                    height: 300,
+                                                    automatic_uploads: true,
+                                                    relative_urls: false,
+                                                    images_upload_url: '/uploads',
+                                                    plugins: [
+                                                        'advlist autolink lists link image charmap print preview anchor',
+                                                        'searchreplace visualblocks code fullscreen',
+                                                        'insertdatetime media table paste code help wordcount'
+                                                    ],
+                                                    toolbar:
+                                                        'undo redo | formatselect | bold italic backcolor | \
+                      alignleft aligncenter alignright alignjustify | \
+                      bullist numlist outdent indent | removeformat',
+                                                    file_picker_callback: function (callback, value, meta) {
+                                                        // Provide file and text for the link dialog
+                                                        if (meta.filetype === 'file') {
+                                                            callback('mypage.html', { text: 'My text' });
+                                                        }
+
+                                                        // Provide image and alt text for the image dialog
+                                                        if (meta.filetype === 'image') {
+                                                            callback('myimage.jpg', { alt: 'My alt text' });
+                                                        }
+
+                                                        // Provide alternative source and posted for the media dialog
+                                                        if (meta.filetype === 'media') {
+                                                            callback('movie.mp4', { source2: 'alt.ogg', poster: 'image.jpg' });
+                                                        }
+                                                    },
+                                                    images_upload_handler: function (blobInfo, success, failure) {
+
+                                                        let headers = new Headers();
+
+                                                        headers.append('Accept', 'Application/JSON');
+
+                                                        let formData = new FormData()
+
+                                                        formData.append('post-image', blobInfo.blob(), blobInfo.filename());
+
+                                                        let req = new Request('/api/uploads/postimage', {
+                                                            method: 'POST',
+                                                            headers,
+                                                            mode: 'cors',
+                                                            body: formData
+                                                        })
+
+                                                        fetch(req)
+                                                            .then(res => res.json())
+                                                            .then(data => success(data.imgUrl))
+                                                            .catch(() => failure('HTTP Error!'))
+                                                    },
+                                                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+                                                }}
+                                            />
                                         </div>
                                         <div className="mb-3">
                                             <input

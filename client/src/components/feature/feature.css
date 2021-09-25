@@ -23,12 +23,14 @@
     margin-bottom: 18px;
     font-family: Fraunces, sans-serif;
     padding-right: 50px;
+    -webkit-line-clamp: 2;
 }
 
 .feature .featured_desc {
     font-size: 18px;
     color: #544b47;
     margin-bottom: 40px;
+    -webkit-line-clamp: 3;
 }
 
 .feature .feature_right {

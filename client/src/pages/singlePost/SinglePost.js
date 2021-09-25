@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
+import ReactHtmlParser from 'react-html-parser'
 import './single-post.css';
 import axios from 'axios';
 import Loading from '../../components/loading/Loading';
@@ -66,7 +67,8 @@ const SinglePost = () => {
                     <div className="single_content mt-5">
                         <div className="container">
                             <div className="single-content_wrapper">
-                                <p>{post?.description}</p>
+                            { ReactHtmlParser(post?.description) }
+                                {/* <p>{post?.description}</p> */}
                             </div>
                         </div>
                     </div>

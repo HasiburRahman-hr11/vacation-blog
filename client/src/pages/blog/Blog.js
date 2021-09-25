@@ -32,7 +32,7 @@ const Blog = () => {
             try {
                 setLoading(true)
                 const { data } = await axios.get(`/api/posts?page=${currentPage}&limit=${limit}`);
-                setPosts(data.posts.sort((a, b) => new Date(a.createdAt) < new Date(b.createdAt) ? 1 : -1))
+                setPosts(data.posts)
                 setTotalPages(data.totalPage);
 
                 setLoading(false);

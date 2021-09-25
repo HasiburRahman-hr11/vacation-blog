@@ -102,6 +102,13 @@ form {
   letter-spacing: -3px;
 }
 
+.elipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+
 .tag {
   padding: 4px 12px;
   border: 1px solid #e0e0e0;
@@ -199,7 +206,8 @@ form {
   height: 30px !important;
   margin-top: 5px;
 }
-.update_info{
+
+.update_info {
   font-size: 15px;
 }
 
