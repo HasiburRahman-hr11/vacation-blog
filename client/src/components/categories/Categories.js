@@ -2,11 +2,14 @@
 import './categories.css';
 import { CallMade } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
+import LightSpeed from 'react-reveal/LightSpeed';
 
 const CategoryItem = ({ category }) => {
     return (
         <Link to={`/category/${category.toLowerCase()}`} className="cat_list_link d-flex align-items-center justify-content-between">
-            <span className="cat_link_title">{category}</span>
+            <LightSpeed right>
+                <span className="cat_link_title">{category}</span>
+            </LightSpeed>
             <CallMade className="cat_link_icon" />
         </Link>
     )

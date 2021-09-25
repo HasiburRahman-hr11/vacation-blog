@@ -1,15 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Link } from 'react-router-dom';
 import './post.css';
+import Slide from 'react-reveal/Slide';
 
 const Post = ({ post, col }) => {
     return (
         <div className={col === '3' ? 'post_col_sm post_item col-lg-4 col-md-6 col-sm-12' : 'post_item post_col_lg col-lg-6 col-md-6 col-sm-12'}>
             <div className="post_item_wrapper">
                 {post?.thumbnail && (
-                    <Link to={`/post/${post._id}`} className="post_image">
-                        <img src={post.thumbnail} alt="Post Thumbnail" className="post_thumbnail" />
-                    </Link>
+                    <Slide bottom>
+                        <Link to={`/post/${post._id}`} className="post_image">
+                            <img src={post.thumbnail} alt="Post Thumbnail" className="post_thumbnail" />
+                        </Link>
+                    </Slide>
                 )}
                 <div className="post_tag">
                     {post.categories.map(category => (

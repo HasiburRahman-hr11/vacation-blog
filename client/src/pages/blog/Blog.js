@@ -9,27 +9,30 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router';
 import Error from '../../components/error/Error';
+import Fade from 'react-reveal/Fade';
+import Slide from 'react-reveal/Slide';
+
 
 const Blog = () => {
     const params = useParams();
     const pageNumber = params.pageNumber || 1;
 
-    const [posts , setPosts] = useState([]);
-    const [loading , setLoading] = useState(false);
-    const [error , setError] = useState('');
-    const [currentPage , setCurrentPage] = useState(pageNumber);
-    const [totalPages , setTotalPages] = useState(1);
-    const [limit , setLimit] = useState(12);
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
+    const [currentPage, setCurrentPage] = useState(pageNumber);
+    const [totalPages, setTotalPages] = useState(1);
+    const [limit, setLimit] = useState(12);
 
-   
-    
 
-    useEffect(()=>{
-        const fetchPosts = async()=>{
+
+
+    useEffect(() => {
+        const fetchPosts = async () => {
             try {
                 setLoading(true)
-                const {data} = await axios.get(`/api/posts?page=${currentPage}&limit=${limit}`);
-                setPosts(data.posts.sort((a,b) => new Date(a.createdAt) < new Date(b.createdAt) ? 1 : -1))
+                const { data } = await axios.get(`/api/posts?page=${currentPage}&limit=${limit}`);
+                setPosts(data.posts.sort((a, b) => new Date(a.createdAt) < new Date(b.createdAt) ? 1 : -1))
                 setTotalPages(data.totalPage);
 
                 setLoading(false);
@@ -40,7 +43,7 @@ const Blog = () => {
             }
         }
         fetchPosts();
-    },[currentPage , limit]);
+    }, [currentPage, limit]);
 
     return (
         <>
@@ -52,29 +55,34 @@ const Blog = () => {
                     <Loading />
                 </div>
             ) : error ? (
-               <Error message={error} />
+                <Error message={error} />
             ) : (
                 <>
-                    <div className="blog_hero">
-                        <div className="blog_hero_wrapper">
-                            <div className="row">
-                                <div className="col-lg-6 col-md-6 col-sm-12 blog_hero_left d-flex align-items-center justify-content-center">
-                                    <h1 className="blog_hero_title big_title">Explore all Vacation blogs</h1>
-                                </div>
-                                <div className="col-lg-6 col-md-6 col-sm-12 blog_hero_right">
-                                    <div className="blog_hero_image">
-                                        <img src="/images/blog-hero.jpg" alt="Hero Poster" />
+                    <Fade top>
+                        <div className="blog_hero">
+                            <div className="blog_hero_wrapper">
+                                <div className="row">
+                                    <div className="col-lg-6 col-md-6 col-sm-12 blog_hero_left d-flex align-items-center justify-content-center">
+                                        <h1 className="blog_hero_title big_title">Explore all Vacation blogs</h1>
+                                    </div>
+                                    <div className="col-lg-6 col-md-6 col-sm-12 blog_hero_right">
+                                        <div className="blog_hero_image">
+                                            <img src="/images/blog-hero.jpg" alt="Hero Poster" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </Fade>
 
                     <div className="blog_posts">
                         <div className="blog_posts_wrapper">
                             <div className="container">
                                 <div className="section_header">
-                                    <h2 className="section_title">Blog Posts</h2>
+                                    <Slide left>
+                                        <h2 className="section_title">Blog Posts</h2>
+                                    </Slide>
+
                                 </div>
                                 <div className="row gx-4 gy-5">
                                     {posts?.map(post => (

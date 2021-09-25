@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import './feature.css';
+import Fade from 'react-reveal/Fade';
 
-const Feature = ({post}) => {
+const Feature = ({ post }) => {
 
     return (
         <div className="feature">
@@ -11,7 +12,9 @@ const Feature = ({post}) => {
                         <div className="col-lg-6 col-md-12 featured_left">
                             <div className="feature_content">
                                 <div className="feature_tagline">Featured Post</div>
-                                <h1 className="feature_title big_title">{post?.title}</h1>
+                                <Fade top>
+                                    <h1 className="feature_title big_title">{post?.title}</h1>
+                                </Fade>
                                 <p className="featured_desc">{post?.description?.substr(0, 200)}</p>
 
                                 <Link to={`/post/${post?._id}`} className="button primary_btn link_btn">Read More</Link>
@@ -23,7 +26,9 @@ const Feature = ({post}) => {
                                     <img src={post?.thumbnail} alt="Feature" className="feature_image" />
                                 </div>
                                 <div className="feature_badge">
-                                    <img src="/images/badge.svg" alt="Vacation Badge" />
+                                    <Fade bottom>
+                                        <img src="/images/badge.svg" alt="Vacation Badge" />
+                                    </Fade>
                                 </div>
                             </div>
                         </div>

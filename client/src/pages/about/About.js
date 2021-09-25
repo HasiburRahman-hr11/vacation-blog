@@ -2,6 +2,8 @@ import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import Fade from 'react-reveal/Fade';
+import Slide from 'react-reveal/Slide';
 
 import RecentPosts from '../../components/recentPosts/RecentPosts';
 import './about.css';
@@ -36,7 +38,7 @@ const About = () => {
             {loading ? (
                 <Loading />
             ) : error ? (
-                <Error message={error}/>
+                <Error message={error} />
             ) : (
                 <>
                     <Helmet>
@@ -45,10 +47,12 @@ const About = () => {
                     <div className="about_wrapper">
                         <div className="hero_top about_section">
                             <div className="container">
-                                <div className="hero_content">
-                                    <h1 className="hero_title big_title">A few words about me</h1>
-                                    <p className="hero_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.</p>
-                                </div>
+                                <Fade top>
+                                    <div className="hero_content">
+                                        <h1 className="hero_title big_title">A few words about me</h1>
+                                        <p className="hero_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.</p>
+                                    </div>
+                                </Fade>
                             </div>
                         </div>
 
@@ -57,10 +61,14 @@ const About = () => {
                                 <div className="container">
                                     <div className="row g-4">
                                         <div className="col-lg-6 col-md-6 col-sm-12">
-                                            <img src="/images/about-1.jpg" alt="About Me" className="about_hero_img" />
+                                            <Slide left>
+                                                <img src="/images/about-1.jpg" alt="About Me" className="about_hero_img" />
+                                            </Slide>
                                         </div>
                                         <div className="col-lg-6 col-md-6 col-sm-12">
-                                            <img src="/images/about-2.jpg" className="about_hero_img" alt="About Me" />
+                                            <Slide right>
+                                                <img src="/images/about-2.jpg" className="about_hero_img" alt="About Me" />
+                                            </Slide>
                                         </div>
                                     </div>
                                 </div>
@@ -71,35 +79,41 @@ const About = () => {
                         <div className="about_info about_section">
                             <div className="container">
                                 <div className="about_info_wrapper">
-                                    <div className="about_info_content">
-                                        <h2 className="about_info_title section_title">Traveling is my passion</h2>
-                                        <div className="about_info_desc">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
-                                            <br />
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
+                                    <Fade bottom>
+                                        <div className="about_info_content">
+                                            <h2 className="about_info_title section_title">Traveling is my passion</h2>
+                                            <div className="about_info_desc">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                                                <br />
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </Fade>
                                 </div>
                             </div>
                         </div>
 
                         <div className="about_image about_section">
                             <div className="container">
-                                <img src="/images/about-big.jpg" alt="About" className="about_big_img" />
+                                <Fade bottom>
+                                    <img src="/images/about-big.jpg" alt="About" className="about_big_img" />
+                                </Fade>
                             </div>
                         </div>
 
                         <div className="about_info about_section">
                             <div className="container">
                                 <div className="about_info_wrapper">
-                                    <div className="about_info_content">
-                                        <h2 className="about_info_title section_title">Traveling is my passion</h2>
-                                        <div className="about_info_desc">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
-                                            <br />
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
+                                    <Fade bottom>
+                                        <div className="about_info_content">
+                                            <h2 className="about_info_title section_title">Traveling is my passion</h2>
+                                            <div className="about_info_desc">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                                                <br />
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </Fade>
                                 </div>
                             </div>
                         </div>
