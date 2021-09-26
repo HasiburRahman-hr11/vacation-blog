@@ -1,4 +1,4 @@
-import { EDIT_PROFILE_FAILURE, EDIT_PROFILE_START, EDIT_PROFILE_SUCCESS, LOGIN_FAILURE, LOGIN_START, LOGIN_SUCCESS } from "../constants/authConstants";
+import { EDIT_PROFILE_FAILURE, EDIT_PROFILE_START, EDIT_PROFILE_SUCCESS, LOGIN_FAILURE, LOGIN_START, LOGIN_SUCCESS } from "../../constants/authConstants";
 
 const authReducer = (state, action) => {
     switch (action.type) {

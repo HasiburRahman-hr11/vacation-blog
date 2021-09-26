@@ -3,10 +3,10 @@ import { CameraAlt } from '@material-ui/icons';
 import Sidebar from '../../components/admin/sidebar/Sidebar';
 import './edit-profile.css';
 import { useContext } from 'react';
-import { AuthContext } from '../../context/authContext';
+import { AuthContext } from '../../context/authContext/authContext';
 import { Avatar, CircularProgress } from '@material-ui/core';
 import { useState } from 'react';
-import { editProfile } from '../../context/apiCalls';
+import { editProfile } from '../../context/authContext/apiCalls';
 
 const EditProfile = () => {
     const { dispatch ,user } = useContext(AuthContext);

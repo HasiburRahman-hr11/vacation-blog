@@ -1,9 +1,8 @@
 import { useContext, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import './login.css';
-import { login } from '../../context/apiCalls';
-import { AuthContext } from '../../context/authContext';
+import { login } from '../../context/authContext/apiCalls';
+import { AuthContext } from '../../context/authContext/authContext';
 import { CircularProgress } from '@material-ui/core';
 
 const Login = () => {

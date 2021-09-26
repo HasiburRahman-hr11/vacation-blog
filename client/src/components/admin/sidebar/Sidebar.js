@@ -2,7 +2,7 @@ import { ArrowBackIos, Person, LibraryBooks, PostAdd, ExitToApp, Settings } from
 import { useContext } from 'react';
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { AuthContext } from '../../../context/authContext';
+import { AuthContext } from '../../../context/authContext/authContext';
 import './sidebar.css';
 import { Avatar } from '@material-ui/core';
 

@@ -20,7 +20,7 @@ import EditPost from './pages/editPost/EditPost';
 import EditProfile from './pages/editProfile/EditProfile';
 import Footer from './components/footer/Footer';
 import CatPosts from './pages/catPosts/CatPosts';
-import { AuthContext } from './context/authContext';
+import { AuthContext } from './context/authContext/authContext';
 import Search from './pages/search/Search';
 
 

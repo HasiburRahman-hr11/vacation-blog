@@ -4,7 +4,7 @@ import Sidebar from '../../components/admin/sidebar/Sidebar';
 import { Edit } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
-import { AuthContext } from '../../context/authContext';
+import { AuthContext } from '../../context/authContext/authContext';
 import { Avatar } from '@material-ui/core';
 import Loading from '../../components/loading/Loading';
 
