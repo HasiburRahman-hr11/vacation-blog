@@ -9,21 +9,25 @@ const searchReducer = (state, action) => {
                 isFetching: true,
                 error: false
             }
+            break;
         case SEARCH_SUCCESS:
             return {
                 posts: action.payload,
                 isFetching: false,
                 error: false
             }
+            break;
         case SEARCH_FAILED:
             return {
                 posts: [],
                 isFetching: false,
                 error: action.payload
             }
+            break;
 
         default:
             return state;
+            break;
     }
 }
 

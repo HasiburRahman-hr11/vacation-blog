@@ -150,7 +150,7 @@ const CreatePost = () => {
                                         onChange={(e) => setCategories(e.target.value)} />
                                 </div>
                                 <div className="mb-3">
-                                    <label className="file_label w-100" htmlFor="thumbnail"><Image /> Post Thumbnail</label>
+                                    <label className="file_label w-100" htmlFor="thumbnail"><Image /> {thumbnail ? thumbnail.name : 'Post Thumbnail'}</label>
                                     <input
                                         type="file"
                                         name="thumbnail"

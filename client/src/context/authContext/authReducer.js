@@ -8,12 +8,14 @@ const authReducer = (state, action) => {
                 isFetching: true,
                 error: null
             }
+            break;
         case LOGIN_SUCCESS:
             return {
                 user: action.payload,
                 isFetching: false,
                 error: null
             }
+            break;
         case LOGIN_FAILURE:
             return {
                 user: {},
@@ -21,17 +23,18 @@ const authReducer = (state, action) => {
                 error: action.payload
             }
 
-
+            break;
         case EDIT_PROFILE_START:
             return {
                 user: state.user,
                 isFetching: true,
                 error: null
             }
+            break;
         case EDIT_PROFILE_SUCCESS:
             return {
                 user: {
-                    id:state.user.id,
+                    id: state.user.id,
                     token: state.user.token,
                     isAdmin: state.user.isAdmin,
                     email: state.user.email,
@@ -45,15 +48,17 @@ const authReducer = (state, action) => {
                 isFetching: false,
                 error: null
             }
+            break;
         case EDIT_PROFILE_FAILURE:
             return {
                 user: state.user,
                 isFetching: false,
                 error: action.payload
             }
-
+            break;
         default:
             return state;
+            break;
     }
 }
 

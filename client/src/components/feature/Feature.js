@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './feature.css';
-import Fade from 'react-reveal/Fade';
+import Slide from 'react-reveal/Slide'
 import ReactHtmlParser from 'react-html-parser'
 
 const Feature = ({ post }) => {
@@ -13,9 +13,9 @@ const Feature = ({ post }) => {
                         <div className="col-lg-6 col-md-12 featured_left">
                             <div className="feature_content">
                                 <div className="feature_tagline">Featured Post</div>
-                                <Fade top>
+                                <Slide top>
                                     <h1 className="feature_title big_title elipsis">{post?.title}</h1>
-                                </Fade>
+                                </Slide>
                                 <div className="featured_desc elipsis">{ReactHtmlParser(post?.description?.substr(0, 200))}</div>
 
                                 <Link to={`/post/${post?._id}`} className="button primary_btn link_btn">Read More</Link>
@@ -27,9 +27,9 @@ const Feature = ({ post }) => {
                                     <img src={post?.thumbnail} alt="Feature" className="feature_image" />
                                 </div>
                                 <div className="feature_badge">
-                                    <Fade bottom>
+                                    <Slide bottom>
                                         <img src="/images/badge.svg" alt="Vacation Badge" />
-                                    </Fade>
+                                    </Slide>
                                 </div>
                             </div>
                         </div>
